@@ -2,10 +2,9 @@
 
 # define Fib class
 class Fib(object):
-    def __init__(self, max, init_value):
+    def __init__(self, max):
         self.max = max
         self.n, self.a, self.b = 0, 0, 1
-        self.init_value = init_value
 
     def __iter__(self):
         return self
