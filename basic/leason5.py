@@ -21,3 +21,16 @@ class Fib(object):
 # using fib object
 for i in Fib(10):
     print(i)
+
+# iterator yield
+def Fib_(max):
+    a, b = 0, 1
+    while max:
+        r = b
+        a, b = b, a + b
+        max -= 1
+        yield r
+
+
+for i in Fib_(10):
+    print(i)
