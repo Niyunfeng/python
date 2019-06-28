@@ -29,4 +29,3 @@ def portrait(name, **kw):
 
 
 portrait("Mike", age=24, country="china", education="bachelor")
-
