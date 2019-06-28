@@ -19,6 +19,11 @@ for key in dic:
 
 print(dic["lan"])
 
+person = {"name": "lisi", "age": 16, "city": "shanghai"}
+
+for key, value in person.items():
+    print(key, ":", value)
+
 print("#")
 
 # set
