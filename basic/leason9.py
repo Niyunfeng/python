@@ -10,3 +10,12 @@ print(text)
 my_file = open("text.txt", "w")  # 用法: open('文件名','形式'), 其中形式有'w':write;'r':read.
 my_file.write(text)  # 该语句会写入先前定义好的 text
 my_file.close()  # 关闭文件
+
+print("--------------------------")
+
+my_file = open("text.txt")
+try:
+    all_the_text = my_file.read()
+    print(all_the_text)
+finally:
+    my_file.close
