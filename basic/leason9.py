@@ -1,7 +1,8 @@
 # read/write file
 
 # \n line commend
-text = "This is my first line.\nThis is my second line.\nThis is my third line.\n"
+text = "This is my first line.\nThis is my second line.\n \
+        This is my third line.\n"
 print(text)
 
 text = "\tThis is my first line.\n\tThis is my second line.\n\tThis is my third line.\n"
