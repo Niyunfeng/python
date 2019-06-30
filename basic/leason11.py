@@ -20,4 +20,3 @@ elif score >= 60:
     print("You get a D")
 else:
     print("Sorry, you are failed!")
-
