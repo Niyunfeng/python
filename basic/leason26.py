@@ -9,14 +9,16 @@ hit_status = False
 
 
 def B_Callback():
-    global hit_status
-    messagebox.showinfo(" ", "running")
-    if hit_status == False:
-        var.set("Hello python")
-        hit_status = True
-    else:
-        var.set("")
-        hit_status = False
+    # global hit_status
+    # messagebox.showinfo(" ", "running")
+    # if hit_status == False:
+    #     var.set("Hello python")
+    #     hit_status = True
+    # else:
+    #     var.set("")
+    #     hit_status = False
+    value = lb.get(lb.curselection())
+    var.set(value)
 
 
 def insert_point():
@@ -25,19 +27,29 @@ def insert_point():
 
 
 def insert_end():
-    var = e.get()
+    var = e.get(lb.curselection())
     t.insert("end", var)
 
 
 window = tk.Tk()
 window.title("Tkinter")
-window.geometry("480x480")
+window.geometry("720x480")
 var = tk.StringVar()
+var2 = tk.StringVar()
+var2 = set((11, 22, 33, 44))
+lb = tk.Listbox(window, listvariable=var2)
+list_items = [1, 2, 3, 4]
+for item in list_items:
+    lb.insert("end", item)
+lb.insert(1, "first")
+lb.insert(2, "second")
+lb.delete(2)
+lb.pack()
 e = tk.Entry(window, show="*")
 e.pack()
 t = tk.Text(window, height=2)
 t.pack()
-l = tk.Label(window, textvariable=var, font=("Arial", 12), width=12, height=2)
+l = tk.Label(window, bg="yellow", width=4, textvariable=var)
 l.pack()
 b = tk.Button(
     window,
@@ -45,7 +57,6 @@ b = tk.Button(
     width=12,
     height=2,
     activeforeground="blue",
-    state="active",
     command=B_Callback,
 )
 b.pack()
