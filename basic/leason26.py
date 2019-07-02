@@ -5,15 +5,25 @@
 import tkinter as tk
 from tkinter import messagebox
 
+hit_status = False
+
 
 def B_Callback():
+    global hit_status
     messagebox.showinfo(" ", "running")
+    if hit_status == False:
+        var.set("Hello python")
+        hit_status = True
+    else:
+        var.set("")
+        hit_status = False
 
 
 window = tk.Tk()
 window.title("Tkinter")
 window.geometry("480x240")
-l = tk.Label(window, text="This is Tkinter", font=("Arial", 12), width=12, height=2)
+var = tk.StringVar()
+l = tk.Label(window, textvariable=var, font=("Arial", 12), width=12, height=2)
 l.pack()
 b = tk.Button(
     window,
