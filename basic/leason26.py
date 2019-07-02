@@ -19,10 +19,24 @@ def B_Callback():
         hit_status = False
 
 
+def insert_point():
+    var = e.get()
+    t.insert("insert", var)
+
+
+def insert_end():
+    var = e.get()
+    t.insert("end", var)
+
+
 window = tk.Tk()
 window.title("Tkinter")
-window.geometry("480x240")
+window.geometry("480x480")
 var = tk.StringVar()
+e = tk.Entry(window, show="*")
+e.pack()
+t = tk.Text(window, height=2)
+t.pack()
 l = tk.Label(window, textvariable=var, font=("Arial", 12), width=12, height=2)
 l.pack()
 b = tk.Button(
@@ -35,7 +49,11 @@ b = tk.Button(
     command=B_Callback,
 )
 b.pack()
+b1 = tk.Button(window, text="insert point", width=15, height=2, command=insert_point)
+b1.pack()
 
+b2 = tk.Button(window, text="insert end", command=insert_end)
+b2.pack()
 
 window.mainloop()
 
