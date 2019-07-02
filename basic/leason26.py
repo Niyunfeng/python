@@ -21,6 +21,10 @@ def B_Callback():
     var.set(value)
 
 
+def print_selection():
+    lr.config(text="you have selected " + var3.get())
+
+
 def insert_point():
     var = e.get()
     t.insert("insert", var)
@@ -37,6 +41,7 @@ window.geometry("720x480")
 var = tk.StringVar()
 var2 = tk.StringVar()
 var2 = set((11, 22, 33, 44))
+var3 = tk.StringVar()
 lb = tk.Listbox(window, listvariable=var2)
 list_items = [1, 2, 3, 4]
 for item in list_items:
@@ -51,6 +56,18 @@ t = tk.Text(window, height=2)
 t.pack()
 l = tk.Label(window, bg="yellow", width=4, textvariable=var)
 l.pack()
+r1 = tk.Radiobutton(
+    window, text="Option A", variable=var3, value="A", command=print_selection
+)
+r1.pack()
+r2 = tk.Radiobutton(
+    window, text="Option B", variable=var3, value="B", command=print_selection
+)
+r2.pack()
+r3 = tk.Radiobutton(
+    window, text="Option C", variable=var3, value="C", command=print_selection
+)
+r3.pack()
 b = tk.Button(
     window,
     text="Button",
@@ -65,6 +82,9 @@ b1.pack()
 
 b2 = tk.Button(window, text="insert end", command=insert_end)
 b2.pack()
+
+lr = tk.Label(window, text="empty", width=20, bg="blue")
+lr.pack()
 
 window.mainloop()
 
